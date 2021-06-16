@@ -1,0 +1,264 @@
+@charset "UTF-8";
+/**
+* Mixin to easily get nested map values.
+*
+* @example
+*   $example-map: (
+*     foo: (
+*       baz: (
+*         qux: (
+*           quux: (
+*             garply: (
+*               waldo: "Hello world"
+*             )
+*           )
+*         )
+*       ) 
+*     ) 
+*   );
+*   
+*   // Usage : nested-map-get($example-map, foo, baz, qux, quux, garply, waldo); --> "Hello world"
+*
+* @see https://github.com/sass/sass/issues/1349#issuecomment-50817692
+*/
+/**
+* Helper function for the "nested-map-get" function.
+*/
+/**
+* Remove all trailing and leading whitespaces from a string.
+*
+* @see https://github.com/HugoGiraudel/SassyStrings/blob/c9696b70243d790a468bd5d6bcb1e54d706eceb8/dist/_SassyStrings.scss
+*/
+/**
+* Divide a string into a list/array of substrings.
+* The division is done by searching for a pattern, a separator.
+*
+* @see https://github.com/HugoGiraudel/SassyStrings/blob/c9696b70243d790a468bd5d6bcb1e54d706eceb8/stylesheets/private/_str-explode.scss
+*/
+/**
+* Determine if a given string contains a given substring.
+*
+* @param  string $haystack
+* @param  string $needle
+* @return bool
+*/
+/**
+* Replace `$search` with `$replace` in `$string`
+* 
+* @author Hugo Giraudel
+* @param string $string - Initial string
+* @param string $search - Substring to replace
+* @param string $replace ('') - New value
+* @return string - Updated string
+*/
+/**
+* Use the config() function to access your Tailwind config's values using dot notation.
+* It allows you to reference a value from your entire configuration.
+*/
+/**
+* Use the theme() function to access your Tailwind config's theme values using dot notation.
+* It allowes you to reference a value from your theme configuration.
+*
+* It's a shortcurt to `config('theme.x')'`.
+*
+* Works similarly to: https://tailwindcss.com/docs/functions-and-directives#theme
+*/
+/**
+* Use the color() function to access your Tailwind config theme's color values using dot notation.
+* It allowes you to reference a value from your theme color configuration.
+*
+* It's a shortcurt to `theme('colors.x')'`.
+*
+* As an alternative for dot notation, an unlimited parameters list may be
+* provided to access the nested values.
+*
+* @example
+*    - color('gray'); --> defaulting to the "500" shade
+*    - color(gray); --> defaulting to the "500" shade
+*    - color('gray.800');
+*    - color(gray, '800');
+*    - color('gray', 800);
+*    - color('gray', '800');
+*    - color(gray, 800);
+*/
+/**
+* Because something like: "join((1, 2), (4, 5, 6), '.')" won't work.
+*/
+/**
+* Function for controlling how elements are sized and placed across grid columns.
+*
+* @docs https://tailwindcss.com/docs/grid-column
+*/
+/**
+* Function for controlling the font family of an element.
+*
+* @docs https://tailwindcss.com/docs/font-family
+*/
+/**
+* Function for controlling the font weight of an element.
+*
+* @docs https://tailwindcss.com/docs/font-weight
+*/
+/**
+* Function for controlling the font size of an element.
+*
+* @docs https://tailwindcss.com/docs/font-size
+*/
+/**
+* Function for controlling the font family, size or weight of an element.
+* It relies on the fact that the Tailwind config won't have same keys for
+* `fontFamily`, `fontWeight`, or `fontSize`.
+*
+* If your config does have similar key names for those, please
+* use the dedicated font functions instead.
+*/
+/**
+* Function for specifying the columns in a grid layout.
+*
+* @docs https://tailwindcss.com/docs/grid-template-columns
+*/
+/**
+* Function for controlling the leading (line height) of an element.
+*
+* @docs https://tailwindcss.com/docs/line-height
+*/
+/**
+* Function for controlling the border radius of an element.
+*
+* @docs https://tailwindcss.com/docs/border-radius
+*/
+/**
+* Reference responsive breakpoints in your project.
+*
+* @docs https://tailwindcss.com/docs/breakpoints
+*/
+/**
+* Function for controlling the box shadow of an element.
+*
+* @docs https://tailwindcss.com/docs/box-shadow
+*/
+/**
+* Function for setting the "size" of an element.
+* It referes to your theme's width and maxWidth values.
+*/
+/**
+* Reference a value from the global spacing and sizing scale configuration of your project.
+* It referes to your theme's margin value. It will most likely have the "auto", positive and negative spacing values.
+*/
+/**
+* Function for controlling the tracking (letter spacing) of an element.
+*
+* @docs https://tailwindcss.com/docs/letter-spacing
+*/
+/**
+* Function for controlling which CSS properties transition.
+*
+* @docs https://tailwindcss.com/docs/transition-property
+*/
+/**
+* Function for controlling the duration of CSS transitions.
+*
+* @docs https://tailwindcss.com/docs/transition-duration
+*/
+/**
+* Function for controlling the easing of CSS transitions.
+*
+* @docs https://tailwindcss.com/docs/transition-timing-function
+*/
+/**
+* Function for controlling the delay of CSS transitions.
+*
+* @docs https://tailwindcss.com/docs/transition-delay
+*/
+/**
+* Function for controlling CSS transitions.
+*/
+/**
+* Feature test CSS Custom Properties.
+* Note: Browser needs to support CSS Feature Queries.
+*/
+/**
+* Feature test CSS "object-fit".
+* Note: Browser needs to support CSS Feature Queries.
+*/
+/**
+* Feature test CSS Grid.
+* Note: Browser needs to support CSS Feature Queries.
+*/
+/**
+* Feature test CSS Flexbox.
+* Note: Browser needs to support CSS Feature Queries.
+*/
+/**
+* Modern enough browsers.
+* Note: Browser needs to support CSS Feature Queries.
+*/
+/**
+* Feature test "Evergreen" browsers by seeing if the browser supports the latest CSS features.
+* Note: Browser needs to support CSS Feature Queries.
+*/
+/**
+* Feature test "Cutting egde" browsers by seeing if the browser supports the latest and greatest / newly out CSS features.
+* Note: Browser needs to support CSS Feature Queries.
+*/
+/**
+* Clearing floats hack.
+*/
+/**
+* Truncate overflowing text with an ellipsis (…) if needed
+*/
+/**
+* For ARIA and usability reasons : prevent off screen / non visible elements from being focusable and from being in the tab order
+* An example of the problem could be found on Youtube by searching for : A11ycasts #02
+* Might also need a 'tabindex="-1"' on the HTML element for a programmatic focus (https://stackoverflow.com/questions/32911355/whats-the-tabindex-1-in-bootstrap-for)
+*/
+/**
+* Only display content to screen readers
+* 
+* @See: https://a11yproject.com/posts/how-to-hide-content/
+* @See: https://hugogiraudel.com/2016/10/13/css-hide-and-seek/
+*/
+/**
+* Use in conjunction with .sr-only to only display content when it's focused.
+* 
+* Useful for "Skip to main content" links; see https://www.w3.org/TR/2013/NOTE-WCAG20-TECHS-20130905/G1
+* Credit: HTML5 Boilerplate
+*/
+/**
+* Responsive breakpoint for very small screen sizes.
+*/
+/**
+* Responsive breakpoint for small screen sizes.
+*/
+/**
+* Responsive breakpoint for medium screen sizes.
+*/
+/**
+* Responsive breakpoint for large screen sizes.
+*/
+/**
+* Responsive breakpoint for pretty large screen sizes.
+*/
+/**
+* Responsive breakpoint for large screen sizes.
+*/
+/**
+* Responsive breakpoint for very large screen sizes.
+*/
+/**
+* Mixin for controlling CSS transition properties.
+*/
+/**
+* Add the font bold family and it's correct font weight to an element
+* 
+* @example scss
+*   .el {
+*     @include font-bold;
+*   }
+*   
+* @output
+*   .el {
+*       font-family: (...);
+*       font-weight: (...);
+*   }
+*/

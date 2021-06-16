@@ -1,0 +1,18 @@
+.collapse
+    @apply overflow-hidden relative max-h-40 transition-all duration-500
+    &::after
+        content: ""
+        @apply  absolute w-full inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-white
+    &--on
+        @apply max-h-full
+        &::after
+            @apply transition-all duration-500 opacity-0
+    &__btn
+        @apply  select-none uppercase transition-all duration-500 font-bold text-blue-900 my-8
+        &::after
+            content: "\2303"
+            @apply align-middle inline-block transform rotate-180 -translate-y-1
+        &--on
+            &::after
+                @apply transform-none
+                

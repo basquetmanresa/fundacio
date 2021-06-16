@@ -1,0 +1,35 @@
+.tb
+    @apply grid max-w-screen-xl w-full gap-2 px-5 items-center py-2 select-none lg:py-0
+    grid-template-areas: "ham logo man" "nav nav nav"
+    grid-template-columns: min-content 1fr 1fr
+
+    @screen lg
+        grid-template-columns: max-content auto max-content
+        grid-template-areas: "logo nav man"
+
+    &-logo
+        grid-area: logo
+        
+    &-nav
+        @apply hidden gap-y-2 font-bold 
+        grid-area: nav
+        @screen lg
+            @apply  grid grid-flow-col justify-start
+
+    &-man
+        @apply justify-self-end
+        grid-area: man
+
+    &-wrap
+        @apply sticky top-0 z-20 flex justify-center bg-gray-100 shadow-lg
+
+    &-ham
+        &-ico
+            grid-area: ham
+            @apply cursor-pointer
+            @screen lg
+                @apply hidden
+        &-check
+            @apply hidden
+            &:checked ~ .tb-nav
+                @apply grid

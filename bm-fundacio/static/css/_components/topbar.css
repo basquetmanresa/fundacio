@@ -1,0 +1,45 @@
+.tb {
+  @apply grid max-w-screen-xl w-full gap-2 px-5 items-center py-2 select-none lg:py-0;
+  grid-template-areas: "ham logo man" "nav nav nav";
+  grid-template-columns: min-content 1fr 1fr;
+}
+@screen lg {
+  .tb {
+    grid-template-columns: max-content auto max-content;
+    grid-template-areas: "logo nav man";
+  }
+}
+.tb-logo {
+  grid-area: logo;
+}
+.tb-nav {
+  @apply hidden gap-y-2 font-bold;
+  grid-area: nav;
+}
+@screen lg {
+  .tb-nav {
+    @apply grid grid-flow-col justify-start;
+  }
+}
+.tb-man {
+  @apply justify-self-end;
+  grid-area: man;
+}
+.tb-wrap {
+  @apply sticky top-0 z-20 flex justify-center bg-gray-100 shadow-lg;
+}
+.tb-ham-ico {
+  grid-area: ham;
+  @apply cursor-pointer;
+}
+@screen lg {
+  .tb-ham-ico {
+    @apply hidden;
+  }
+}
+.tb-ham-check {
+  @apply hidden;
+}
+.tb-ham-check:checked ~ .tb-nav {
+  @apply grid;
+}
