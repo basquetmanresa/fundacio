@@ -21,7 +21,7 @@ const pugSmart = true
 this.app = `./${pjson.name}/`
 const rootPaths = {
   src: this.app,
-  dst: this.app,
+  dst: 'docs/',
   templates: 'templates/',
   static: 'static/'
 }
@@ -29,8 +29,11 @@ const rootPaths = {
 const parentPaths = {
   templates: {
     src: rootPaths.src + rootPaths.templates,
-    dst: rootPaths.dst + rootPaths.templates,
+    //dst: rootPaths.dst + rootPaths.templates,
+    dst: rootPaths.dst,
+    
   },
+
   static: {
     src: rootPaths.src + rootPaths.static,
     dst: rootPaths.dst + rootPaths.static,
@@ -64,8 +67,8 @@ const paths = {
       src: parentPaths.static.src + 'sass/**/*.{sass,scss}',
     },
     img: {
-      src: parentPaths.static.src + 'img/**/*.{jpg,png,webp,svg}',
-      dst: parentPaths.static.dst + 'img/',
+      src: parentPaths.static.src + 'images/**/*.{jpg,png,webp,svg}',
+      dst: parentPaths.static.dst + 'images/',
     },
     js: {
       app: {

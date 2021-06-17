@@ -1,4 +1,8 @@
 extends includes/base.pug
+block seo
+    title Esport base | Fundació Foment del Bàsquet
+    meta(name="description" content="La nostra ciutat, Manresa, és una ciutat de bàsquet")
+
 block body
     article
         +ge-bc-header("Esport base","/static/images/teams/base-c.jpg")
@@ -6,12 +10,12 @@ block body
             .bc-wrap
                 .bc-1c
                     h2.bc__title Equips base
-                    p Vint-i-un equips van formar part de l'entitat, la temporada 2020-21. 
+                    p Dinou equips van formar part de l'entitat la temporada 2020-21. 
                     p La seva distribució per categories és la següent:
                 .bc-2c
                     section
-                        h3.bc__subtitle Bloc escola basquet
-                        p 9 equips: Mini (3), Premini (2), Iniciació (4)
+                        h3.bc__subtitle Bloc escola de bàsquet
+                        p 7 equips: Mini (2), Premini (2), Iniciació (3)
                         p Complex Vell Congost
                         ul(class="grid grid-cols-1 gap-4 md:grid-cols-3")
                             li: img(src="/static/images/cb-manresa.png" alt="")
@@ -36,19 +40,8 @@ block body
                             h3.bc__subtitle Objectius i plantejament
                             .collapse
                                 p Difondre valors com l'esforç, el respecte als companys i els que no ho són i la cultura de l'esport i el treball físic per aconseguir una millora de la salut, són valors que es transmeten al llarg de les visites escolars que es realitzen al llarg del període lectiu. En aquest programa d'activitats de la Fundació Foment del Bàsquet, els jugadors del primer equip del Bàsquet Manresa juguen un paper importantíssim en tant que personatges públics i icones populars a les quals els resulta molt més directe i senzill exercir d'improvisats transmissors dels valors citats anteriorment. 
-                                p Els alumnes dels centres de Manresa i al Catalunya Central viuen amb entusiasme la visita dels jugadors que sempre va acompanyada del repartiment de diferents obsequis per establir un vincle entre la formació dels joves i el bàsquet com a plataforma de transmissió. El desenvolupament de diferents activitats al llarg del temps que dura la visita, permet assolir els objectius plantejats d'una forma pràctica, directa i senzilla que compta amb un alt grau d'efectivitat. 
-                    
-                    div
-                        section
-                            h3.bc__subtitle Funcionament
-                            .collapse
-                                p Al voltant d'uns 3.000 nens i nenes de Manresa i la Catalunya Central, gaudeixen d'aquestes visites escolars que es posen en marxa quan el curs ja ha començat per permetre que els centres d’ensenyament puguin definir els seus calendaris d’activitats i encaixar les trobades en coordinació amb el club. El nombre de centres visitats creix cada temporada en una clara mostra de l'efectivitat i l'èxit d'aquesta activitat i el programa de la trobada sol seguir uns patrons genèrics tot i que s’adapta també als requeriments de cadascuna de les escoles. 
-                                p El cert és que costa encabir les visites dels jugadors a les escoles al llarg del calendari d’una sola temporada, tenint en compte que la demanda dels centres d'ensenyament primari i secundari són molt altes i, de vegades, s'ha fet necessari repetir visita a un mateix centre al llarg d’una temporada per evitar la massificació i, per tant, aconseguir que els missatges arribin de forma clara i directe als alumnes. 
-                                p El programa d'activitats segueix un patró genèric adaptat als requeriments estructurals i de treball de cada centre escolar. L'habitual és que es desplacin dos jugadors del primer equip del Bàsquet Manresa i que comparteixin tota una tarda amb nens i nenes fent tota una sèrie d'activitats de caire diferent (promoció i formació) que segueixen unes pautes fixades prèviament per part del cos tècnic de l'equip, el responsable de l'àrea i els rectors dels centres escolars. 
-                                p El primer acte consisteix en un col·loqui amb els alumnes per parlar de l’esport i més concretament del bàsquet. En aquesta primera part de la visita, es solen combinar les qüestions didàctiques amb les indefugibles preguntes adreçades als jugadors per la seva condició de personatges públics. Els jugadors, però, no estan sols, ja que els acompanya el professorat del centre encapçalat pels professors d’educació física corresponent amb l'objectiu de reforçar el caire lectiu de la trobada i aplicar tot allò que s'ha preparat amb els alumnes prèviament. 
-                                p Després d'acabar l'intercanvi d'opinions, els jugadors fan una petita demostració a les pistes dels diferents centres d’ensenyament en la qual també hi participen els alumnes que, d’aquesta manera, poden sentir-se encara més a prop dels seus ídols del món de la cistella. Aquesta és també una forma de refermar els missatges que s'han difós al llarg del col·loqui perquè es procedeix a un moviment d'aproximació clau entre els alumnes i els jugadors. 
-                                p Finalment, es reparteixen dos tipus d'obsequis: d'una banda, un record per a tots els alumnes perquè puguin tenir una postal, un pòster, o material gràfic de l’equip, i de l'altra, es faciliten als alumnes entrades i invitacions personalitzades amb el logotip de la fundació i/o el nom del centre visitat. El codi de barres que incorporen, permet controlar posteriorment, l’acceptació de la visita que, la passada temporada, va superar el 45% de quòrum respecte les entrades repartides. 
-                        section
+                                p Els alumnes dels centres de Manresa i la Catalunya Central viuen amb entusiasme la visita dels jugadors que sempre va acompanyada del repartiment de diferents obsequis per establir un vincle entre la formació dels joves i el bàsquet com a plataforma de transmissió. El desenvolupament de diferents activitats al llarg del temps que dura la visita permet assolir els objectius plantejats d'una forma pràctica, directa i senzilla que compta amb un alt grau d'efectivitat. 
+                    section
                             h3.bc__subtitle Escoles adherides al programa
                             .collapse
                                 ul
@@ -66,6 +59,16 @@ block body
                                     li Escola Joan de Palà 
                                     li Vedruna Manresa
 
+                    div
+                        section
+                            h3.bc__subtitle Funcionament
+                            .collapse
+                                p Al voltant d'uns 3.000 nens i nenes de Manresa i la Catalunya Central gaudeixen d'aquestes visites escolars que es posen en marxa quan el curs ja ha començat per permetre que els centres d’ensenyament puguin definir els seus calendaris d’activitats i encaixar les trobades en coordinació amb el club. El nombre de centres visitats creix cada temporada en una clara mostra de l'efectivitat i l'èxit d'aquesta activitat i el programa de la trobada sol seguir uns patrons genèrics tot i que s’adapta també als requeriments de cadascuna de les escoles. 
+                                p El cert és que costa encabir les visites dels jugadors a les escoles al llarg del calendari d’una sola temporada, tenint en compte que la demanda dels centres d'ensenyament primari i secundari són molt altes i, de vegades, s'ha fet necessari repetir visita a un mateix centre al llarg d’una temporada per evitar la massificació i, per tant, aconseguir que els missatges arribin de forma clara i directe als alumnes. 
+                                p El programa d'activitats segueix un patró genèric adaptat als requeriments estructurals i de treball de cada centre escolar. L'habitual és que es desplacin dos jugadors del primer equip del Bàsquet Manresa i que comparteixin tota una tarda amb nens i nenes fent tota una sèrie d'activitats de caire diferent (promoció i formació) que segueixen unes pautes fixades prèviament per part del cos tècnic de l'equip, el responsable de l'àrea i els rectors dels centres escolars. 
+                                p El primer acte consisteix en un col·loqui amb els alumnes per parlar de l’esport i més concretament del bàsquet. En aquesta primera part de la visita, es solen combinar les qüestions didàctiques amb les indefugibles preguntes adreçades als jugadors per la seva condició de personatges públics. Els jugadors, però, no estan sols, ja que els acompanya el professorat del centre encapçalat pels professors d’educació física corresponent amb l'objectiu de reforçar el caire lectiu de la trobada i aplicar tot allò que s'ha preparat amb els alumnes prèviament. 
+                                p Després d'acabar l'intercanvi d'opinions, els jugadors fan una petita demostració a les pistes dels diferents centres d’ensenyament en la qual també hi participen els alumnes que, d’aquesta manera, poden sentir-se encara més a prop dels seus ídols del món de la cistella. Aquesta és també una forma de refermar els missatges que s'han difós al llarg del col·loqui perquè es procedeix a un moviment d'aproximació clau entre els alumnes i els jugadors. 
+                                p Finalment, es reparteixen dos tipus d'obsequis: d'una banda, un record per a tots els alumnes perquè puguin tenir una postal, un pòster, o material gràfic de l’equip, i de l'altra, es faciliten als alumnes entrades i invitacions personalitzades amb el logotip de la fundació i/o el nom del centre visitat. El codi de barres que incorporen permet controlar posteriorment l’acceptació de la visita que, la passada temporada, va superar el 45% de quòrum respecte les entrades repartides. 
 
         section.bc.bc--dark_blue
             .bc-wrap

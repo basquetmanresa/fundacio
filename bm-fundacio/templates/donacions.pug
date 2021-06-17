@@ -1,50 +1,37 @@
 extends includes/base.pug
+block seo
+    title Donacions | Fundació Foment del Bàsquet
+    meta(name="description" content="Avantatges fiscals de les donacions a la Fundació Foment del Bàsquet")
+    
 block body
     article
-        +ge-bc-header("Donacions","/static/images/portada/presentacio-equips-2020.jpg")
+        +ge-bc-header("Donacions","/static/images/donacions.jpg")
         section.bc
             .bc-wrap
                 .bc-1c
-                    h2.bc__title Beneficis fiscals per col.laborar
-                    p Si feu una donació o dues a la Fundació Foment del Bàsquet, ja sigui com a persona física o com a persona jurídica, tindreu beneficis fiscals en la vostra declaració de la renda. 
+                        h2.bc__title Beneficis fiscals per col.laborar
+                        p Si feu una donació o dues a la Fundació Foment del Bàsquet, ja sigui com a persona física o com a persona jurídica, tindreu beneficis fiscals en la vostra declaració de la renda. 
                 <div class="flex">
                 .bc-1c 
-                    <div class="bg-green-400 p-6 m-1">
-                        h2.bc__title 150€
-                        p Text text text text. Text text text text. Text text text text. Text text text text. Text text text text. 
+                    <div class="bg-gradient-to-r from-green-500 to-green-200 p-4 m-1 rounded-md h-40">
+                        h2.bc__title Primers 150€ anuals
+                        p Tens avantatges fiscals en cas de donació de fins a 150€.
                     </div>
                 .bc-2c 
-                    <div class="bg-gray-200 p-6 m-1">
-                        h2.bc__title 75%
-                        p Text text text text. Text text text text. Text text text text. Text text text text. Text text text text. 
+                    <div class="bg-green-200 p-4 m-1 rounded-md h-40">
+                        h2.bc__title 75% de desgravació
+                        p Podràs desgravar-te el 75% de tots els donatius fets a ONGs i fundacions fins un màxim de 150€
                     </div>
-                .bc-3c 
-                    <div class="bg-gray-200 p-6 m-1 rounded-lg">
-                        h2.bc__title 35%
-                        p Text text text text. Text text text text. Text text text text. Text text text text. Text text text text.
                 </div>
-                section.bc.bc--dark_blue
-            .bc-wrap
                 <div class="flex">
-                    <div class="bg-red-400 p-6 m-1 rounded-lg">
-                        h2.bc__title Menys de 150€
-                        p Text text text text. Text text text text. Text text text text. Text text text text. Text text text text. 
+                .bc-1c 
+                    <div class="bg-gradient-to-r from-blue-500 to-blue-200 p-4 m-1 rounded-md h-40">
+                        h2.bc__title Import restant 
+                        p Per a l'import restant (més de 150€), aquesta és la desgravació que rebràs:
                     </div>
-                    <div class="bg-gray-200 p-6 m-1 rounded-lg">
-                        h2.bc__title Títol caixa 1
-                        p Text text text text. Text text text text. Text text text text. Text text text text. Text text text text. 
+                .bc-2c 
+                    <div class="bg-blue-200 p-4 m-1 rounded-md h-40">
+                        h2.bc__title +30% de desgravació afegida
+                        p Podràs desgravar-te també el 30% de l'import del teu donatiu que excedeixi als primers 150€
                     </div>
-                    <div class="bg-gray-200 p-6 m-1 rounded-lg">
-                        h2.bc__title Títol caixa 1
-                        p Text text text text. Text text text text. Text text text text. Text text text text. Text text text text.
                 </div>
-        section.bc.bc--light_blue
-            .bc-wrap
-                .bc-1c
-                    h2.bc__title Subvencions rebudes
-                    p lorem
-        section.bc.bc--dark_blue
-            .bc-wrap
-                .bc-1c
-                    h2.bc__title Subvencions/ Ajuts concedits
-                    p lorem
