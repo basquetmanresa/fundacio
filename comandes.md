@@ -12,3 +12,6 @@ https://localhost:3000
 $ git add .
 $ git commit -am "comentari"
 $ git push
+
+## actualitzar codi de dalt
+git pull
