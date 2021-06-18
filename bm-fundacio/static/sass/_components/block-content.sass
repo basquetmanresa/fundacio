@@ -1,68 +1,141 @@
 .bc
-    @apply flex justify-center relative
+    display: flex
+    position: relative
+    justify-content: center
     &--header
         height: 40vh
-        @apply items-end
-    &__bg
-        @apply absolute inset-0 w-full h-full object-cover 	
+        align-items: end
+    &__bg	
+        position: absolute
+        inset: 0
+        height: 100%
+        object-fit: cover
 
     &--dark_blue
-        @apply bg-blue-900 text-white
-
+        background: $w-primary-color-dark
+        color: $w-white
         .bc__title
-            @apply text-white
+            color: $w-white
         .collapse
+            color: $w-white
             &::after
-                @apply to-blue-900
+                background: linear-gradient($w-primary-color-dark 100%, $w-primary-color-dark 0%)
             &__btn
-                @apply text-white
+                color: $w-white
 
     &--light_blue
-        @apply bg-blue-100
-
-        .collapse::after
-            @apply to-blue-100
+        background: $w-primary-color
+        color: $w-white
+        .bc__title
+            color: $w-white
+        .collapse
+            &::after
+                color: $w-white
+                background: linear-gradient($w-primary-color 100%, $w-primary-color 0%)
+            &__btn
+                color: $w-white
 
     &-wrap
-        @apply grid max-w-screen-xl w-full px-4 py-20 gap-8 relative z-10
+        display: grid
+        width: 100%
+        max-width: $xlarge
+        padding: 2rem 1rem
+        grid-gap: 3rem
+        position: relative
+        z-index: 10
 
     &-1c
-        @screen lg
-            @apply w-6/12
+        +breakpoint(large)
+            width: 50%
 
     &-2c
-        @apply flex flex-col-reverse gap-8
-        @screen lg
-            @apply flex-row 
-        & > *
-            @apply flex-1
+        display: grid
+        grid-template-columns: repeat(1, 1fr)
+        grid-gap: 2rem
+        +breakpoint(large)
+            grid-template-columns: repeat(2, 1fr)
+
     &__supatitle
-        @apply text-8xl text-blue-900 font-bold pb-4
+        font-size: 3rem
+        color: $w-primary-color
+        font-weight: bold
+        padding-bottom: 2rem
 
     &__title
-        @apply text-4xl text-blue-900 font-bold pb-4
+        font-size: 2rem
+        color: $w-primary-color
+        font-weight: bold
+        padding-bottom: 2rem
 
     &__subtitle
-        @apply text-xl font-bold pb-1
+        font-size: 1.5rem
+        font-weight: bold
+        padding-bottom: 1rem
 
     &-patrons
-        @screen lg
+        +breakpoint(large)
             column-count: 4
             column-gap: 1rem
+    &-patrons_wrap
+        display: grid
+        grid-template-columns: 1fr
+        +breakpoint(medium)
+            grid-template-columns: 1fr 2fr
             
     &-emb_players
         column-gap: 1rem
         column-count: 2
-        @screen md
+        +breakpoint(medium)
             column-count: 4
-        @screen lg
+        +breakpoint(large)
             column-count: 6
-            
+    &-member_list
+        display: grid
+        grid-template-columns: 1fr 1fr
+        grid-gap: 1rem
+        +breakpoint(medium)
+            grid-template-columns: repeat(4, 1fr)
+        +breakpoint(large)
+            grid-template-columns: repeat(6, 1fr)
+
     &-member
-        @apply h-0 w-full relative
         padding-top: 100%
+        height: 0
+        width: 100%
+        position: relative
         &-wrap
-            @apply flex absolute inset-0 bg-white flex-col items-center justify-center text-center
+            display: flex
+            position: absolute
+            inset: 0
+            background: $w-white
+            flex-direction: column
+            align-items: center
+            justify-content: center
+            text-align: center
+            padding: 1rem
         
         &-img_cnt
-            @apply pb-4 w-full h-full max-h-28 flex items-center justify-center object-scale-down
+            padding-bottom: 2rem
+            width: 100%
+            height: 100%
+            max-height: 8rem
+            display: flex
+            align-items: center
+            justify-content: center
+            object-fit: contain
+    &-action_list
+        display: grid
+        grid-template-columns: 1fr
+        grid-gap: 1rem
+        +breakpoint(medium)
+            grid-template-columns: repeat(2, 1fr)
+        +breakpoint(large)
+            grid-template-columns: repeat(4, 1fr)
+    &-action
+        &__img
+            width: 100%
+            object-fit: contain
+            margin-bottom: 1rem
+    &-palmares
+        display: grid
+        grid-template-columns: repeat(2, 1fr)

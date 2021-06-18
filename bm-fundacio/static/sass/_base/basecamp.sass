@@ -1,0 +1,54 @@
+//Breakpoint strict module
+=breakpoint($point)
+    @if $point == "xlarge"
+        @media (min-width: $xlarge)
+            @content
+
+    @else if $point == "large"
+        @media (min-width: $large)
+            @content
+
+    @else if $point == "medium"
+        @media (min-width: $medium)
+            @content
+
+    @else
+        @media (min-width: $point)
+            @content
+
+//-fix for 100vw + scrollbar-y in tb
+html
+    scroll-behavior: smooth
+
+html, textarea
+    font-family: $global-font-family
+
+a
+    color: $w-primary-color
+
+p, li
+    line-height: 1.4em
+p
+    padding-bottom: 1em
+strong
+    font-weight: $bold
+
+input
+    font-size: 0.8rem
+img
+    width: 100%
+
+//Header definition
+//-
+    h1
+        +h1
+    h2
+        +h2
+    h3
+        +h3
+    h4
+        +h4
+    h5
+        +h5
+    h6
+        +h6

@@ -14,8 +14,7 @@ const optimize = {
   js: true
 }
 const onDjango = false
-const runTailwind = true
-const pugSmart = true
+const pugSmart = false
 
 //Folder and File Vars
 this.app = `./${pjson.name}/`
@@ -58,10 +57,7 @@ const paths = {
       src: parentPaths.static.src + 'css/**/*.css',
       dst: parentPaths.static.dst + 'css/',
     },
-    pcss: {
-      dir: parentPaths.static.src + 'pcss/',
-      src: parentPaths.static.src + 'pcss/tailwind.css',
-    },
+
     sass: {
       dir: parentPaths.static.src + 'sass/',
       src: parentPaths.static.src + 'sass/**/*.{sass,scss}',
@@ -98,27 +94,12 @@ function sass() {
       return !/\/_/.test(file.path) && !/^_/.test(file.relative);
     }))
     .pipe(plug.dartSass())
-    .pipe(plug.if(runTailwind,
-      plug.postcss([
-        plug.tailwindcss('./tailwind.config.js'),
-      ])
-    ))
     
     .pipe(gulp.dest(paths.static.css.dst))
     .pipe(plug.if(!optimize.css,
       plug.browserSync.stream()
     ))
 
-};
-function pcss() {
-  if (runTailwind) {
-    return gulp.src(paths.static.pcss.src)
-      .pipe(plug.postcss([
-        plug.tailwindcss('./tailwind.config.js'),
-      ]))
-      .pipe(gulp.dest(paths.static.css.dst))
-      .pipe(plug.browserSync.stream())
-  }
 };
 function allPug() {
   //- compila tots els pugs sense _ a carpeta o fitxer
@@ -251,12 +232,8 @@ function watch() {
     gulp.watch(paths.templates.pug.srcco, sincePug);
     gulp.watch(paths.templates.pug.srcinc, allPug);
   }
-
   gulp.watch(paths.templates.txt.src, txt);
   gulp.watch(paths.static.sass.src, sass);
-  if (runTailwind) {
-    gulp.watch([paths.static.pcss.dir, `./tailwind.config.js`], pcss);
-  }
   if (optimize.css) {
     gulp.watch(paths.static.css.src, css);
   }
@@ -269,9 +246,5 @@ function watch() {
 
 exports.default = gulp.parallel(watch, browserSync);
 
-if (runTailwind) {
-  exports.rebuild = gulp.parallel(allPug, txt, gulp.series(pcss, sass, css), appJs, otherJs, img, fonts, video);
-} else {
-  exports.rebuild = gulp.parallel(allPug, txt, gulp.series(sass, css), appJs, otherJs, img, fonts, video);
 
-}
+exports.rebuild = gulp.parallel(allPug, txt, gulp.series(sass, css), appJs, otherJs, img, fonts, video);

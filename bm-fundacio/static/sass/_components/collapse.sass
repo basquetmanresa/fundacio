@@ -1,18 +1,35 @@
 .collapse
-    @apply overflow-hidden relative max-h-40 transition-all duration-500
+    overflow: hidden
+    position: relative
+    max-height: 10rem
+    transition: all .5s
     &::after
         content: ""
-        @apply  absolute w-full inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-white
+        position: absolute
+        width: 100%
+        left: 0
+        right: 0
+        height: 10rem
+        background: linear-gradient($w-white 100%, $w-white 0%)
     &--on
-        @apply max-h-full
+        max-height: 100%
         &::after
-            @apply transition-all duration-500 opacity-0
+            transition: all .5s
+            opacity: 0
     &__btn
-        @apply  select-none uppercase transition-all duration-500 font-bold text-blue-900 my-8
+        user-select: none
+        text-transform: uppercase
+        transition: all .5s
+        font-weight: bold
+        color: $w-primary-color
+        margin: 2rem 0
         &::after
             content: "\2303"
-            @apply align-middle inline-block transform rotate-180 -translate-y-1
+            vertical-align: middle
+            display: inline-block
+            transform: rotate(180deg) translateY(0.25rem)
+
         &--on
             &::after
-                @apply transform-none
+                transform: none
                 
