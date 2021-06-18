@@ -8,7 +8,7 @@
             img(src="static/images/foment-basquet.svg", alt="foment basquet manresa")
         
         ul.tb-nav
-            mixin anchor(href, name, selected)
+            mixin anchor(href, name)
                 li.tb-nav__item
                     a(href=href)= name
 
@@ -17,7 +17,7 @@
             +anchor('teams.html', 'Esport Base')
             +anchor('donacions.html', 'Donacions')
             +anchor('main-team.html', 'Lliga Endesa')
-            +anchor('contact.html', 'Contacte')
-        
+            li.tb-nav__item
+                a(href="https://docs.google.com/forms/d/e/1FAIpQLSdF030MS3wX4PXcw6Hf-kbq1LcaAHNqhy6bYrJDNCCF8b5qXQ/viewform" target="_blank") Contacte
         a.tb-man(href="https://www.basquetmanresa.com")
             img(src="static/images/basquet-manresa.png", alt="basquet manresa")
