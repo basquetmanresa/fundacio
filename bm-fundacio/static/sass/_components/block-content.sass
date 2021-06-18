@@ -2,44 +2,59 @@
     display: flex
     position: relative
     justify-content: center
+    
     &--header
-        height: 40vh
-        align-items: end
+        background: $w-primary-color
+        padding-top: 4rem
+        position: relative
+        color: $w-white
+        .bc-wrap
+            align-content: start
+            grid-gap: 1rem
+        &::after
+            position: absolute
+            content: ""
+            bottom: 0
+            height: 30%
+            width: 100%
+            background: linear-gradient(rgba($w-white, 0%),rgba($w-white, 100%))
+    &--header-cover
+        height: 100vh !important
+        &::after
+            content: none
     &__bg	
         position: absolute
         inset: 0
         height: 100%
         object-fit: cover
+        filter: grayscale(100%)
+        opacity: .6
 
+
+    &--dark_blue, &--light_blue
+        color: $w-white
+        .bc__title, .bc__subtitle
+            color: $w-white
+        .collapse
+            color: $w-white
+            &__btn
+                color: $w-white
+    
     &--dark_blue
         background: $w-primary-color-dark
-        color: $w-white
-        .bc__title
-            color: $w-white
-        .collapse
-            color: $w-white
-            &::after
-                background: linear-gradient($w-primary-color-dark 100%, $w-primary-color-dark 0%)
-            &__btn
-                color: $w-white
-
+        .collapse::after
+            background: linear-gradient(rgba($w-primary-color-dark, 0%),rgba($w-primary-color-dark, 100%))
+    
     &--light_blue
         background: $w-primary-color
-        color: $w-white
-        .bc__title
-            color: $w-white
-        .collapse
-            &::after
-                color: $w-white
-                background: linear-gradient($w-primary-color 100%, $w-primary-color 0%)
-            &__btn
-                color: $w-white
+        .collapse::after
+            background: linear-gradient(rgba($w-primary-color, 0%),rgba($w-primary-color, 100%))
 
     &-wrap
         display: grid
         width: 100%
         max-width: $xlarge
-        padding: 2rem 1rem
+        padding: 5rem 1rem
         grid-gap: 3rem
         position: relative
         z-index: 10
@@ -57,20 +72,24 @@
 
     &__supatitle
         font-size: 3rem
-        color: $w-primary-color
+        color: $w-white
         font-weight: bold
-        padding-bottom: 2rem
+    &__supaintro
+        font-size: 1.1rem
+        color: $w-white
+        max-width: 460px
 
     &__title
         font-size: 2rem
         color: $w-primary-color
         font-weight: bold
-        padding-bottom: 2rem
+        padding-bottom: 1rem
 
     &__subtitle
         font-size: 1.5rem
         font-weight: bold
-        padding-bottom: 1rem
+        padding-bottom: .5rem
+        color: $w-primary-color
 
     &-patrons
         +breakpoint(large)

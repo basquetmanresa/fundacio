@@ -2,27 +2,31 @@
     overflow: hidden
     position: relative
     max-height: 10rem
-    transition: all .5s
+    transition: 1s
     &::after
         content: ""
         position: absolute
         width: 100%
         left: 0
         right: 0
-        height: 10rem
-        background: linear-gradient($w-white 100%, $w-white 0%)
+        bottom: 0
+        height: 5rem
+        background: linear-gradient(rgba($w-white, 0%),rgba($w-white, 100%))
+        opacity: 1
+        transition: opacity 1s
     &--on
         max-height: 100%
         &::after
-            transition: all .5s
             opacity: 0
+            
     &__btn
         user-select: none
         text-transform: uppercase
-        transition: all .5s
+        transition: .5s
         font-weight: bold
         color: $w-primary-color
         margin: 2rem 0
+        font-size: .8rem
         &::after
             content: "\2303"
             vertical-align: middle

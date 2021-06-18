@@ -14,7 +14,6 @@ const optimize = {
   js: true
 }
 const onDjango = false
-const pugSmart = false
 
 //Folder and File Vars
 this.app = `./${pjson.name}/`
@@ -110,30 +109,7 @@ function allPug() {
     .pipe(plug.pug({ basedir: paths.templates.src }))
     .pipe(gulp.dest(paths.templates.dst))
     .pipe(plug.browserSync.stream())
-
-};
-function sincePug() {
-  //- allPug + només pasen els fitxers canviats (lastRun).
-  return gulp.src(paths.templates.pug.src, { since: gulp.lastRun(sincePug) })
-    .pipe(plug.filter(function (file) {
-      return !/\/_/.test(file.path) && !/^_/.test(file.relative);
-    }))
-    .pipe(plug.pug({ basedir: paths.templates.src }))
-    .pipe(gulp.dest(paths.templates.dst))
-    .pipe(plug.browserSync.stream())
-};
-
-function smartPug() {
-  //- sincePug + inheritance(compila pugs afectats pel fitxer canviat [PE en cas de mixin/include])
-  return gulp.src(paths.templates.pug.src, { since: gulp.lastRun(smartPug) })
-    .pipe(plug.pugInheritance({ basedir: paths.templates.src, skip: 'strange-fix' }))
-    .pipe(plug.filter(function (file) {
-      return !/\/_/.test(file.path) && !/^_/.test(file.relative);
-    }))
-    .pipe(plug.pug({ basedir: paths.templates.src }))
-    .pipe(gulp.dest(paths.templates.dst))
-    .pipe(plug.browserSync.stream())
-};
+}
 
 function txt() {
   return gulp.src(paths.templates.txt.src, { since: gulp.lastRun(txt) })
@@ -226,12 +202,7 @@ function browserSync() {
 }
 
 function watch() {
-  if (pugSmart) {
-    gulp.watch(paths.templates.pug.src, smartPug);
-  } else {
-    gulp.watch(paths.templates.pug.srcco, sincePug);
-    gulp.watch(paths.templates.pug.srcinc, allPug);
-  }
+  gulp.watch(paths.templates.pug.src, allPug);
   gulp.watch(paths.templates.txt.src, txt);
   gulp.watch(paths.static.sass.src, sass);
   if (optimize.css) {
