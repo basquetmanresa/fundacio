@@ -216,6 +216,3 @@ function watch() {
 };
 
 exports.default = gulp.parallel(watch, browserSync);
-
-
-exports.rebuild = gulp.parallel(allPug, txt, gulp.series(sass, css), appJs, otherJs, img, fonts, video);

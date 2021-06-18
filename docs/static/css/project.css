@@ -222,10 +222,13 @@ img {
   display: grid;
   grid-auto-flow: row;
   justify-items: center;
-  grid-gap: 1rem;
+  grid-gap: 0.75rem;
   margin: 0 auto;
   padding: 4rem 0;
   width: 100%;
+}
+.ft__rights, .ft__cookies {
+  font-size: 0.9rem;
 }
 
 .bc {
