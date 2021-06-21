@@ -1,0 +1,33 @@
+include mixins.pug
+doctype html
+html(lang='CA')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    link(rel="icon" type="png" href="static/images/favicon.png")
+
+    block seo
+
+    link(rel='stylesheet' href='static/css/project.css')
+    link(rel='preconnect' href='https://fonts.gstatic.com')
+    link(href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap" rel="stylesheet")
+    script(src="static/js/vendor/cookie-though.js")
+
+
+  body
+    include topbar.pug
+    block body
+    include footer.pug
+    script(src='static/js/project.min.js')
+    script(src="static/js/vendor/cookies-text-ca.js")
+    script(async src="https://www.googletagmanager.com/gtag/js?id=UA-43358268-1")
+    script.
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-43358268-1');
+
+
+
+
