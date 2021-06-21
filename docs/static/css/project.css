@@ -108,6 +108,7 @@ img {
 }
 @media (min-width: 1024px) {
   .tb {
+    background: none;
     grid-template-columns: max-content auto max-content;
     grid-template-areas: "logo nav man";
     height: initial;
