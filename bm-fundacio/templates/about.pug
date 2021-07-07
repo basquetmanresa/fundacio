@@ -1,11 +1,11 @@
-extends includes/base.pug
+extends _includes/base.pug
 block seo
     title La Fundació | Fundació Foment del Bàsquet
     meta(name="description" content="Salutació del president, missió i objectius i organigrama de la Fundació Foment del Bàsquet")
      
 block body
     article
-        +ge-bc-header("Qui som?","static/images/quisom.jpg")
+        +ge-bc-header("Qui som?","static/images/quisom.jpg","Dedicats a la promoció del bàsquet mitjançant la divulgació i formació en tots els àmbits.")
         section.bc
             .bc-wrap
                 .bc-1c
@@ -41,17 +41,14 @@ block body
                         p La secció esportiva realitzarà la seva activitat d’acord amb els principis de la formació integral de les persones a través de la pràctica esportiva, intentant compaginar esport i estudis, i fomentar els valors de l’esforç col·lectiu, la participació, l’esportivitat i la superació personal.
                         p Aquests elements mostren clarament que els resultats esportius no són un objectiu en ells mateixos, sinó la conseqüència del foment d'uns valors determinats i del treball que es fa per propiciar el desenvolupament dels membres de tots els seus equips mitjançant l'esforç, el treball i la dedicació per aconseguir persones sanes i responsables des del punt de vista físic, psíquic i social.
         
-        section.bc.bc--light_blue
+        section.bc
             .bc-wrap
                 .bc-1c
                     h2.bc__title Relació de patrons
                     p El patronat és l’òrgan rector de la Fundació i està format per tot un seguit de persones que, desinteressadament,  treballen perquè s’assoleixin els objectius que es plantegen a l'entitat l’entitat dins de diferents àmbits d’actuació relacionats amb la promoció del bàsquet en tots els àmbits. Els integrants d’aquest òrgan presidit pel senyor Josep Vives Portell se’ls  anomena patrons. 
         
-        section.bc
-            .bc-wrap
-                .bc-1c
-                div(class="grid grid-cols-1 md:grid-cols-3")
-                    div(class="md:col-span-1")
+                .bc-patrons_wrap
+                    div
                         section
                             h3.bc__subtitle President del Patronat
                             p Sr. Josep Vives Portell
@@ -61,7 +58,7 @@ block body
                                 li Albert Torras Torras
                                 li Albert Cots i  Sarrate
                                 
-                    section(class="md:col-span-2")
+                    div
                         h3.bc__subtitle Patrons
                         ul.bc-patrons
                             li Jaume Arnau Capitán
@@ -88,9 +85,9 @@ block body
             .bc-wrap
                 .bc-1c
                     h2.bc__title Membres d’honor de la Fundació
-                ul(class="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-6")
+                ul.bc-member_list
                     mixin member(name, src, href)
-                        li.bc-member: a(class="bc-member-wrap p-4" href=href target="_blank")
+                        li.bc-member: a.bc-member-wrap(href=href target="_blank")
                             img.bc-member-img_cnt(src= src alt=name)
                             span.flex-grow-0= name
                             
@@ -111,10 +108,10 @@ block body
                     h2.bc__title Memòria anual d’activitats
                     p Més enllà de les accions directes de tota mena en els sectors de la formació i la integració social, Foment del Bàsquet Fundació Privada dedica una part important dels seus esforços a l'ajuda als sectors més desprotegits de la societat i ho du a terme fent servir el bàsquet com a vincle i vehicle de transmissió d'afecte i sentit solidari.
 
-                ul(class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4")
+                ul.bc-action_list
                     mixin action(name, src)
-                        li
-                            img.w-full.object-contain(src=src alt=name)
+                        li.bc-action
+                            img.bc-action__img(src=src alt=name)
                             h3.bc__subtitle= name
                             block
                     

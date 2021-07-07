@@ -1,11 +1,11 @@
-extends includes/base.pug
+extends _includes/base.pug
 block seo
     title Esport base | Fundació Foment del Bàsquet
     meta(name="description" content="La nostra ciutat, Manresa, és una ciutat de bàsquet")
 
 block body
     article
-        +ge-bc-header("Esport base","static/images/teams/base-c.jpg")
+        +ge-bc-header("Esport base","static/images/teams/base-c.jpg","Arrelant el bàsquet i els valors de l'esforç i l'esportivitat a Manresa i a la Catalunya central.")
         section.bc
             .bc-wrap
                 .bc-1c
@@ -17,19 +17,11 @@ block body
                         h3.bc__subtitle Bloc escola de bàsquet
                         p 7 equips: Mini (2), Premini (2), Iniciació (3)
                         p Complex Vell Congost
-                        ul(class="grid grid-cols-1 gap-4 md:grid-cols-3")
-                            li: img(src="static/images/cb-manresa.png" alt="")
-                            li: img(src="static/images/cb-manresa.png" alt="")
-                            li: img(src="static/images/cb-manresa.png" alt="")
-                    
                     section
                         h3.bc__subtitle Bloc masculí
                         p 12 equips: Júnior (3), Cadet (5), Infantil (3), Preinfantil (1)
                         p Complex Vell Congost
-                        ul(class="grid grid-cols-1 gap-4 md:grid-cols-3")
-                            li: img(src="static/images/cb-manresa.png" alt="")
-                            li: img(src="static/images/cb-manresa.png" alt="")
-                            li: img(src="static/images/cb-manresa.png" alt="")
+
         
         section.bc.bc--light_blue
             .bc-wrap
@@ -37,10 +29,10 @@ block body
                     h2.bc__title Promoció del Bàsquet
                 .bc-2c
                     div 
-                            h3.bc__subtitle Objectius i plantejament
-                            .collapse
-                                p Difondre valors com l'esforç, el respecte als companys i els que no ho són i la cultura de l'esport i el treball físic per aconseguir una millora de la salut, són valors que es transmeten al llarg de les visites escolars que es realitzen al llarg del període lectiu. En aquest programa d'activitats de la Fundació Foment del Bàsquet, els jugadors del primer equip del Bàsquet Manresa juguen un paper importantíssim en tant que personatges públics i icones populars a les quals els resulta molt més directe i senzill exercir d'improvisats transmissors dels valors citats anteriorment. 
-                                p Els alumnes dels centres de Manresa i la Catalunya Central viuen amb entusiasme la visita dels jugadors que sempre va acompanyada del repartiment de diferents obsequis per establir un vincle entre la formació dels joves i el bàsquet com a plataforma de transmissió. El desenvolupament de diferents activitats al llarg del temps que dura la visita permet assolir els objectius plantejats d'una forma pràctica, directa i senzilla que compta amb un alt grau d'efectivitat. 
+                        h3.bc__subtitle Objectius i plantejament
+                        .collapse
+                            p Difondre valors com l'esforç, el respecte als companys i els que no ho són i la cultura de l'esport i el treball físic per aconseguir una millora de la salut, són valors que es transmeten al llarg de les visites escolars que es realitzen al llarg del període lectiu. En aquest programa d'activitats de la Fundació Foment del Bàsquet, els jugadors del primer equip del Bàsquet Manresa juguen un paper importantíssim en tant que personatges públics i icones populars a les quals els resulta molt més directe i senzill exercir d'improvisats transmissors dels valors citats anteriorment. 
+                            p Els alumnes dels centres de Manresa i la Catalunya Central viuen amb entusiasme la visita dels jugadors que sempre va acompanyada del repartiment de diferents obsequis per establir un vincle entre la formació dels joves i el bàsquet com a plataforma de transmissió. El desenvolupament de diferents activitats al llarg del temps que dura la visita permet assolir els objectius plantejats d'una forma pràctica, directa i senzilla que compta amb un alt grau d'efectivitat. 
                     section
                             h3.bc__subtitle Escoles adherides al programa
                             .collapse
@@ -84,7 +76,7 @@ block body
 
                     
                     div
-                        img.w-full(src="static/images/integracio/integracio.jpg" class="rounded-lg" alt="integracio")
+                        img(src="static/images/integracio/integracio.jpg" class="rounded-lg" alt="integracio")
                 section.bc-2c
                     div
                         h3.bc__subtitle Objectius de Desenvolupament Sostenibles de la UNESCO
@@ -98,7 +90,7 @@ block body
                             p En aquest projecte social, la Fundació Foment del Bàsquet pretén fer un pas més enllà  de generar oportunitats de vida a través de la seva formació esportiva del bàsquet. També vol que les escoles i instituts de Manresa i comarca s’impregnin cap a un desenvolupament sostenible, amb diferents accions  per abordar-ne les barreres sistèmiques com la desigualtat, el posar fi a la pobresa, la fam zero,.... El projecte  planteja i amplia accions de sensibilització que cobreixen 6 dels 17 Objectius del desenvolupament sostenible (ODS).
                     
                     div
-                        img.w-full(src="static/images/unesco/ater.jpg", alt="basquet manresa unesco" )
+                        img(src="static/images/unesco/ater.jpg", alt="basquet manresa unesco" )
         section.bc
             .bc-wrap
                 .bc-2c
@@ -107,4 +99,4 @@ block body
                         p Des de la Fundació s’organitzen dos tipus de campus, ambdós dirigits principalment als jugadors dels equips base del Bàsquet Manresa, però també a d’altres nois i noies d’altres clubs: un d’ells dedicat a assolir la millora tècnica dels participants, i un altre amb una vessant més lúdica per als jugadors.
                     
                     div
-                        img.w-full(src="static/images/promocio/cbium-nadal-2016.jpg", alt="campus basquet manresa")
+                        img(src="static/images/promocio/cbium-nadal-2016.jpg", alt="campus basquet manresa")

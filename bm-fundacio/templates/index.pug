@@ -1,12 +1,12 @@
-extends includes/base.pug
+extends _includes/base.pug
 block seo
     title Inici | Fundació Foment del Bàsquet
-    meta(name="description" content="Pàgina inicial Fundació Foment del Bàsquet")
+    meta(name="description" content="Benvignuts a la web de la fundació")
     
 block body
     article
-        +ge-bc-header("Benvinguts!","static/images/portada/presentacio-equips-2020.jpg")
-        section.bc
+        +ge-bc-header-cover("Benvinguts!","static/images/portada/presentacio-equips-2020.jpg","Benvinguts al lloc web de la Fundació Foment del Bàsquet, de la ciutat de Manresa i amb l'objectiu de promocionar el nostre esport entre els més petits.")
+        //-section.bc
             .bc-wrap
                 .bc-2c
                     div
@@ -14,4 +14,4 @@ block body
                         p Benvinguts al lloc web de la Fundació Foment del Bàsquet, de la ciutat de Manresa i amb l'objectiu de promocionar el nostre esport entre els més petits. 
                         p La nostra fundació està dedicada a fomentar el bàsquet des dels més menuts, a través de les categories inferiors, els campus i els actes de promoció, fins als grans, el nostre equip de la Lliga Endesa, que és un referent i un mirall per als infants amants del bàsquet. 
                     div
-                        img.w-full(src="static/images/portada/base-portada.jpg", alt="Fundació Foment del Bàsquet")
+                        img(src="static/images/portada/base-portada.jpg", alt="Fundació Foment del Bàsquet")

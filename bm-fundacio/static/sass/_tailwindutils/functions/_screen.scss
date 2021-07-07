@@ -1,8 +1,0 @@
-/**
-* Reference responsive breakpoints in your project.
-*
-* @docs https://tailwindcss.com/docs/breakpoints
-*/
-@function screen($key) {
-    @return theme('screens.' + $key);
-}

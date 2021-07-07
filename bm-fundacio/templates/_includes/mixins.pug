@@ -1,0 +1,13 @@
+mixin ge-bc-header(title,img, intro)
+    header.bc.bc--header
+        .bc-wrap
+            h1.bc__supatitle= title
+            p.bc__supaintro= intro
+        img.bc__bg(src=img alt=title)
+
+mixin ge-bc-header-cover(title,img, intro)
+    header.bc.bc--header.bc--header-cover
+        .bc-wrap
+            h1.bc__supatitle= title
+            p.bc__supaintro= intro
+        img.bc__bg(src=img alt=title)

@@ -1,0 +1,204 @@
+@use 'sass:math'
+//Breakpoint strict module
+=breakpoint($point)
+    @if $point == "xlarge"
+        @media (min-width: $xlarge)
+            @content
+
+    @else if $point == "large"
+        @media (min-width: $large)
+            @content
+
+    @else if $point == "medium"
+        @media (min-width: $medium)
+            @content
+
+    @else
+        @media (min-width: $point)
+            @content
+
+//Header style generator           
+=titlelizer($l, $reduction)
+    font-size: math.div($l, $reduction)
+    line-height: 1.1em
+    font-weight: $bold
+    color: $w-primary-color
+    +breakpoint(medium)
+        font-size: $l
+
+//Header style importer
+=h1
+    +titlelizer($h1l, $reduction)
+=h2
+    +titlelizer($h2l, $reduction)
+=h3
+    +titlelizer($h3l, $reduction)
+=h4
+    +titlelizer($h4l, 1)
+    line-height: 1.1em
+=h5
+    +titlelizer($h5l, 1)
+    line-height: 1.1em
+=h6
+    +titlelizer($h6l, 1)
+    line-height: 1.1em
+
+=btn
+    text-decoration: none
+    font-weight: $bold
+    padding: $btn-height/12 $btn-height/1.5
+    margin: 0
+    transition: background-color 0.2s
+    font-size: 0.9em
+    line-height: $btn-height
+    vertical-align: middle
+    text-align: center
+    cursor: pointer
+    $w-white-space: nowrap
+    border: $btn-height*0.05 solid $w-primary-color
+    background-color: $w-primary-color
+    color: $w-$w-white
+    // -webkit-text-fill-color: $w-$w-white
+    display: inline-grid
+    grid-auto-flow: column
+    grid-gap: 0.6rem
+    align-items: center
+    box-sizing: border-box
+    border-radius: 100px
+    justify-content: center
+    width: initial
+
+    &:not(:disabled)
+        &:not([disabled])
+            &:hover
+                background-color: lighten($w-primary-color, 5%)
+                border: $btn-height*0.05 solid lighten($w-primary-color, 5%)
+                color: $w-$w-white
+                //box-shadow: 0 0 4px 0 rgba(37,37,37,.5)
+
+    &:disabled, &[disabled]
+        cursor: initial
+        background-color: $w-grey-600
+        outline: 0
+        color: $w-grey-900
+        border: 0
+        &:hover
+            background-color: $w-grey-600
+            border: $btn-height*0.05 solid lighten($w-grey-600, 5%)
+            color: $w-grey-900
+            border: 0
+
+=btn-sec
+    background-color: $w-primary-color
+    border: $btn-height*0.05 solid $w-primary-color
+    color: $w-primary-color
+    -webkit-text-fill-color: $w-primary-color
+
+=btn-nude
+    color: $w-primary-color
+
+    background-color: transparent
+    border: none
+    padding: 0
+    font-size: 0.9em
+    &:not(:disabled)
+        &:not([disabled])
+            &:hover
+                background-color: transparent
+                border: none
+                box-shadow: initial
+                color: lighten($w-primary-color, 5%)
+            &::after
+                font-family: "Font Awesome 5 Free"
+                content: "\f061"
+                font-weight: 900
+
+=btn-sec-nude
+    color: $w-grey-900
+    background-color: inherit
+    border: none
+    padding: 0
+    &:not(:disabled)
+        &:not([disabled])
+            &:hover
+                background-color: inherit
+                border: inherit
+                box-shadow: initial
+                color: $w-grey-900
+
+=btn-gho
+    color: $w-grey-900
+    border: $btn-height*0.05 solid $w-grey-600
+    background-color: inherit
+    &:not(:disabled)
+        &:not([disabled])
+            &:hover
+                background-color: $w-grey-600
+                border: $btn-height*0.05 solid $w-grey-600
+                color: $w-$w-white
+
+=btn-inv-gho
+    color: $w-primary-color
+    border: $btn-height*0.05 solid $w-primary-color
+    background-color: inherit
+    &:not(:disabled)
+        &:not([disabled])
+            &:hover
+                background-color: $w-primary-color
+                border: $btn-height*0.05 solid $w-primary-color
+                color: $w-$w-white
+
+=btn-urgency
+    background-color: $w-orange-900
+    border-color: $w-orange-900
+    &::before
+        font-family: "Font Awesome 5 Free"
+        content: "\f095"
+        font-weight: 700
+    &:not(:disabled)
+        &:not([disabled])
+            &:hover
+                background-color: $w-orange-600
+                border-color: $w-orange-600
+
+=btn-small
+    padding: $btn-height-small/8 $btn-height-small/1.5
+    border: $btn-height-small*0.05 solid $w-primary-color
+    line-height: $btn-height-small
+    font-size: 0.8em
+    &:not(:disabled)
+        &:not([disabled])
+            &:hover
+                background-color: lighten($w-primary-color, 5%)
+                border: $btn-height-small*0.05 solid lighten($w-primary-color, 5%)
+                color: $w-$w-white
+
+=btn-fixed
+    position: fixed
+    bottom: 0
+    right: 0
+    margin: 1rem
+    z-index: 10
+    background-color: $w-primary-color
+    border-color: $w-primary-color
+    opacity: 0
+    transform: translateX(150%)
+    transition: all 0.5s
+    box-shadow: 0px 0px 23px -4px rgba($w-$w-black,0.45)
+
+    &[visible=true]
+        opacity: 1
+        transform: translateX(0)
+        transition: all 0.5s
+
+    +breakpoint(medium)
+        display: none
+
+=ge-btn-margin
+    margin-top: 1.5rem
+
+=ge-img-border-radius
+    border-radius: 1rem
+
+=ge-section-air
+    padding: 5.5rem 1.5rem
