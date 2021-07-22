@@ -65,6 +65,10 @@ const paths = {
       src: parentPaths.static.src + 'images/**/*.{jpg,png,webp,svg}',
       dst: parentPaths.static.dst + 'images/',
     },
+    pdf: {
+      src: parentPaths.static.src + 'pdf/**/*.{pdf}',
+      dst: parentPaths.static.dst + 'pdf/',
+    },
     js: {
       app: {
         src: parentPaths.static.src + 'js/app/**/*.js',
@@ -159,6 +163,11 @@ function fonts() {
     .pipe(gulp.dest(paths.static.fonts.dst))
     .pipe(plug.browserSync.stream())
 };
+function pdf() {
+  return gulp.src(paths.static.pdf.src, { since: gulp.lastRun(pdf) })
+    .pipe(gulp.dest(paths.static.pdf.dst))
+    .pipe(plug.browserSync.stream())
+};
 
 function video() {
   return gulp.src(paths.static.video.src, { since: gulp.lastRun(video) })
@@ -213,6 +222,7 @@ function watch() {
   gulp.watch(paths.static.js.others.src, otherJs);
   gulp.watch(paths.static.fonts.src, fonts);
   gulp.watch(paths.static.video.src, video);
+  gulp.watch(paths.static.pdf.src, pdf);
 };
 
 exports.default = gulp.parallel(watch, browserSync);
