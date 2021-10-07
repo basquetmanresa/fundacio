@@ -66,7 +66,7 @@ html {
 }
 
 html, textarea {
-  font-family: "Inter", sans-serif;
+  font-family: "Barlow", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 }
 
 a {
@@ -109,7 +109,6 @@ img {
   user-select: none;
   grid-template-areas: "ham logo man" "nav nav nav";
   grid-template-columns: min-content 1fr 1fr;
-  backdrop-filter: blur(10px);
   background: rgba(21, 101, 192, 0.5);
 }
 @media (min-width: 1024px) {
@@ -120,6 +119,162 @@ img {
     height: initial;
     grid-column-gap: 2rem;
     padding: 1rem 1rem;
+  }
+}
+.tb-gen {
+  display: none;
+  grid-template-columns: 1fr 1fr;
+  height: 40px;
+}
+@media (min-width: 1024px) {
+  .tb-gen {
+    display: grid;
+  }
+}
+.tb-list {
+  display: grid;
+  grid-auto-flow: column;
+  margin: 0;
+  list-style: none;
+  align-content: stretch;
+  align-items: stretch;
+  grid-auto-flow: row;
+  justify-content: stretch;
+}
+@media (min-width: 1024px) {
+  .tb-list {
+    grid-auto-flow: column;
+    justify-content: start;
+  }
+}
+@media (min-width: 1024px) {
+  .tb-list--others, .tb-list--social {
+    border-bottom: 1px solid #fff;
+  }
+}
+@media (min-width: 1024px) {
+  .tb-list--others {
+    font-size: 0.8rem;
+    background: linear-gradient(90deg, #cc0000 70%, #FF0000 100%);
+  }
+}
+.tb-list--social {
+  grid-auto-flow: column;
+  justify-content: center;
+  font-size: 1.5em;
+}
+@media (min-width: 1024px) {
+  .tb-list--social {
+    justify-content: start;
+    font-size: 1.2em;
+    justify-content: end;
+    background: linear-gradient(-90deg, #cc0000 70%, #FF0000 100%);
+  }
+}
+.tb-list-item {
+  position: relative;
+}
+.tb-list-item a {
+  text-decoration: none;
+  font-size: 12.8px;
+}
+.tb-list-item--small-hide {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .tb-list-item--small-hide {
+    display: initial;
+  }
+}
+.tb-list-item__legend {
+  color: #fff;
+  display: block;
+  text-transform: uppercase;
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  grid-area: legend;
+  padding: 1rem;
+}
+.tb-list-item__legend i {
+  padding-right: 0.5em;
+  font-size: 15.36px;
+}
+.tb-list-item__legend:hover {
+  color: #fff;
+}
+.tb-list--others .tb-list-item__legend {
+  font-weight: 600;
+}
+.tb-list--others .tb-list-item__legend:hover {
+  text-decoration: underline;
+}
+@media (min-width: 1024px) {
+  .tb-list--others .tb-list-item__legend:hover {
+    text-decoration: none;
+  }
+}
+@media (min-width: 1024px) {
+  .tb-list-item__legend {
+    transition: 0.5s;
+  }
+  .tb-list--social .tb-list-item__legend {
+    padding: 0.4em 0.5em;
+    font-size: 0.8em;
+  }
+  .tb-list--social .tb-list-item__legend:hover {
+    transform: scale(1.1);
+  }
+
+  .tb-list--social:hover .tb-list-item__legend {
+    color: #ff9999;
+  }
+
+  .tb-list--social .tb-list-item__legend:hover {
+    color: #fff;
+  }
+
+  .tb-list--others .tb-list-item__legend {
+    padding: 0.4em 1em;
+    border-top: 2px transparent solid;
+    border-bottom: 2px transparent solid;
+  }
+
+  .tb-list--others .tb-list-item--active .tb-list-item__legend, .tb-list--others .tb-list-item:hover > .tb-list-item__legend {
+    border-bottom-color: #fff;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+  }
+
+  .tb-list--others:hover .tb-list-item__legend {
+    border-color: transparent;
+    color: #ff9999;
+    background: transparent;
+  }
+
+  .tb-list--main .tb-list-item__legend {
+    font-weight: 700;
+    padding: 1rem 2rem;
+  }
+
+  .tb-list--main:hover .tb-list-item__legend {
+    color: #ff9999;
+  }
+  .tb-list--main:hover .tb-list-item__legend:after {
+    border-color: #ff9999 transparent transparent transparent;
+  }
+
+  .tb-list--main .tb-list-item:hover > .tb-list-item__legend {
+    color: #fff;
+  }
+  .tb-list--main .tb-list-item:hover > .tb-list-item__legend:after {
+    border-color: #fff transparent transparent transparent;
+  }
+
+  .tb-list--lang .tb-list-item__legend {
+    padding: 0 2rem;
   }
 }
 .tb-logo {
@@ -192,24 +347,29 @@ img {
   justify-self: end;
   z-index: 1;
 }
-.tb-wrap {
-  position: fixed;
-  top: 0;
-  z-index: 20;
+.tb-main {
   width: 100%;
   display: flex;
   justify-content: center;
   transition: 1s;
+  position: fixed;
+  top: 0;
+  z-index: 20;
 }
 @media (min-width: 1024px) {
-  .tb-wrap {
-    position: absolute;
+  .tb-main {
+    top: 40px;
     background: transparent;
+    position: absolute;
+    backdrop-filter: blur(10px);
   }
-  .tb-wrap:hover {
+  .tb-main:hover {
     background: rgba(21, 101, 192, 0.2);
     backdrop-filter: blur(10px);
   }
+}
+.tb-wrap {
+  width: 100%;
 }
 .tb-ham-ico {
   grid-area: ham;

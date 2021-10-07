@@ -8,7 +8,6 @@
     user-select: none
     grid-template-areas: "ham logo man" "nav nav nav"
     grid-template-columns: min-content 1fr 1fr
-    backdrop-filter: blur(10px)
     background: rgba($w-primary-color-dark, 50%)
     +breakpoint(large)
         background: none
@@ -17,6 +16,138 @@
         height: initial
         grid-column-gap: 2rem
         padding: 1rem 1rem
+
+    &-gen
+        display: none
+        grid-template-columns: 1fr 1fr
+        height: 40px
+        +breakpoint(large)
+            display: grid
+
+    &-list
+        display: grid
+        grid-auto-flow: column
+        margin: 0
+        list-style: none
+        align-content: stretch
+        align-items: stretch
+        grid-auto-flow: row
+        justify-content: stretch
+        
+        +breakpoint(large)
+            grid-auto-flow: column
+            justify-content: start
+        &--others, &--social
+            +breakpoint(large)
+                border-bottom: 1px solid $w-white
+        
+        &--others
+            +breakpoint(large)
+                font-size: .8rem
+                background: linear-gradient(90deg, darken($w-red, 10%) 70%, $w-red 100%)
+        
+        &--social
+            grid-auto-flow: column
+            justify-content: center
+            font-size: 1.5em
+            +breakpoint(large)
+                justify-content: start
+                font-size: 1.2em
+                justify-content: end
+                background: linear-gradient(-90deg, darken($w-red, 10%) 70%, $w-red 100%)
+
+        &-item
+            position: relative
+            a
+                text-decoration: none
+                font-size: 12.8px
+                // font-family: $tb-font-family
+            
+
+            //- distingir entre anchor i legend per simplificar (i molt) tots els @at-root
+            &--small-hide
+                display: none
+                +breakpoint(large)
+                    display: initial
+            &__legend
+                color: $w-white
+                display: block
+                text-transform: uppercase
+                cursor: pointer
+                height: 100%
+                display: flex
+                align-items: center
+                white-space: nowrap
+                grid-area: legend
+                padding: 1rem
+                i
+                    padding-right: .5em
+                    font-size: 15.36px
+                &:hover
+                    color: $w-white
+
+                //- if there is sublist
+
+                .tb-list--others &
+                    font-weight: 600
+                    &:hover
+                        text-decoration: underline
+                        +breakpoint(large)
+                            text-decoration: none
+
+                +breakpoint(large)
+                    transition: .5s
+                    @at-root
+                        //- Social
+                        .tb-list--social &
+                            padding: .4em .5em
+                            font-size: .8em
+                            &:hover
+                                transform: scale(1.1)
+
+                        .tb-list--social:hover &
+                            color: lighten($w-red, 30%)
+
+                        .tb-list--social &:hover
+                            color: $w-white
+                        
+                        //- Others
+                        .tb-list--others &
+                            padding: .4em 1em
+                            border-top: 2px transparent solid
+                            border-bottom: 2px transparent solid
+
+                        .tb-list--others .tb-list-item--active &, .tb-list--others .tb-list-item:hover > &
+                            border-bottom-color: $w-white
+                            background: rgba($w-white, 0.15)
+                            color: $w-white
+
+                        
+                        .tb-list--others:hover &
+                            border-color: transparent
+                            color: lighten($w-red, 30%)
+                            background: transparent
+
+                        //- Main
+                        .tb-list--main &
+                            font-weight: $bold
+                            padding: 1rem 2rem
+                        
+                        .tb-list--main:hover &
+                            color: lighten($w-red, 30%)
+                            &:after
+                                border-color: lighten($w-red, 30%) transparent transparent transparent
+
+                        .tb-list--main .tb-list-item:hover > &
+                            color: $w-white
+                            &:after
+                                border-color: $w-white transparent transparent transparent
+                        //- Lang
+                        .tb-list--lang &
+                            padding: 0 2rem
+                        //- If there is sublist
+
+
 
     &-logo
         grid-area: logo
@@ -47,6 +178,7 @@
             background: none
             backdrop-filter: none
             transform: initial
+
             opacity: 1
             background: transparent
             grid-auto-flow: column
@@ -81,20 +213,27 @@
         justify-self: end
         z-index: 1
 
-    &-wrap
-        position: fixed
-        top: 0
-        z-index: 20
+    &-main
         width: 100%
         display: flex
         justify-content: center
         transition: 1s
+        position: fixed
+        top: 0
+        z-index: 20
         +breakpoint(large)
-            position: absolute
+            top: 40px
             background: transparent
+            position: absolute
+            backdrop-filter: blur(10px)
+
             &:hover
                 background: rgba($w-primary-color-dark, 20%)
                 backdrop-filter: blur(10px)
+    &-wrap
+        width: 100%
+
+
 
     &-ham
         &-ico
