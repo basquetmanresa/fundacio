@@ -14,4 +14,4 @@ $ git commit -am "comentari"
 $ git push
 
 ## actualitzar codi de dalt
-git pull
+git pull 
