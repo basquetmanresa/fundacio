@@ -2,7 +2,7 @@
 (dins carpeta)
 $ npm install 
 
-## per fer correr
+## per fer correr i passar pugs a html
 (dins carpeta)
 $ gulp 
 https://localhost:3000
@@ -15,3 +15,6 @@ $ git push
 
 ## actualitzar codi de dalt
 git pull 
+
+## token 'contrasenya'
+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
