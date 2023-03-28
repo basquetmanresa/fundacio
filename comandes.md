@@ -16,5 +16,11 @@ $ git push
 ## actualitzar codi de dalt
 git pull 
 
+<<<<<<< HEAD
 ## token 'contrasenya'
 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
+=======
+## token 'contrasenya' Expires on Mon, Jun 26 2023.
+
+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
+>>>>>>> 9bb52f51f8c3e22e6ae143ea6b9eaea66a31e86e
