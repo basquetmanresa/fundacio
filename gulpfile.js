@@ -214,9 +214,6 @@ function watch() {
   gulp.watch(paths.templates.pug.src, allPug);
   gulp.watch(paths.templates.txt.src, txt);
   gulp.watch(paths.static.sass.src, sass);
-  if (optimize.css) {
-    gulp.watch(paths.static.css.src, css);
-  }
   gulp.watch(paths.static.img.src, img);
   gulp.watch(paths.static.js.app.src, appJs);
   gulp.watch(paths.static.js.others.src, otherJs);
@@ -226,3 +223,5 @@ function watch() {
 };
 
 exports.default = gulp.parallel(watch, browserSync);
+exports.rebuild = gulp.series(allPug, txt, sass, img, appJs, otherJs, fonts, video, pdf)
+exports.sass = gulp.series(sass)

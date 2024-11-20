@@ -227,52 +227,43 @@ img {
   .tb-list--social .tb-list-item__legend:hover {
     transform: scale(1.1);
   }
-
   .tb-list--social:hover .tb-list-item__legend {
     color: #ff9999;
   }
-
   .tb-list--social .tb-list-item__legend:hover {
     color: #fff;
   }
-
   .tb-list--others .tb-list-item__legend {
     padding: 0.4em 1em;
     border-top: 2px transparent solid;
     border-bottom: 2px transparent solid;
   }
-
   .tb-list--others .tb-list-item--active .tb-list-item__legend, .tb-list--others .tb-list-item:hover > .tb-list-item__legend {
     border-bottom-color: #fff;
     background: rgba(255, 255, 255, 0.15);
     color: #fff;
   }
-
   .tb-list--others:hover .tb-list-item__legend {
     border-color: transparent;
     color: #ff9999;
     background: transparent;
   }
-
   .tb-list--main .tb-list-item__legend {
     font-weight: 700;
     padding: 1rem 2rem;
   }
-
   .tb-list--main:hover .tb-list-item__legend {
     color: #ff9999;
   }
   .tb-list--main:hover .tb-list-item__legend:after {
     border-color: #ff9999 transparent transparent transparent;
   }
-
   .tb-list--main .tb-list-item:hover > .tb-list-item__legend {
     color: #fff;
   }
   .tb-list--main .tb-list-item:hover > .tb-list-item__legend:after {
     border-color: #fff transparent transparent transparent;
   }
-
   .tb-list--lang .tb-list-item__legend {
     padding: 0 2rem;
   }
